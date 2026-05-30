@@ -1,0 +1,695 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Glow Up With Grace — Your Transformation Starts Here</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,700&family=Syne:wght@400;500;600;700;800&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --forest: #2D4A3E;
+  --forest-deep: #1a2e26;
+  --sage: #7A9E8E;
+  --sage-light: #B8D4C8;
+  --terracotta: #C4622D;
+  --terracotta-light: #E8845A;
+  --gold: #C9973A;
+  --gold-light: #F0C97A;
+  --cream: #FAF7F2;
+  --warm-white: #FFFDF9;
+  --charcoal: #1E2420;
+  --mid: #5A6660;
+}
+
+*{margin:0;padding:0;box-sizing:border-box;}
+
+body {
+  font-family: 'Syne', sans-serif;
+  background: var(--charcoal);
+  color: var(--cream);
+  overflow-x: hidden;
+}
+
+/* ── NAV ── */
+nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 100;
+  padding: 20px 48px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(30,36,32,0.85);
+  backdrop-filter: blur(16px);
+  border-bottom: 1px solid rgba(122,158,142,0.12);
+}
+.nav-logo {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 22px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  color: var(--cream);
+}
+.nav-logo span { color: var(--gold); font-style: italic; }
+.nav-links {
+  display: flex;
+  gap: 36px;
+  align-items: center;
+}
+.nav-links a {
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(250,247,242,0.6);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.nav-links a:hover { color: var(--cream); }
+.nav-cta {
+  background: var(--terracotta) !important;
+  color: var(--cream) !important;
+  padding: 10px 22px;
+  border-radius: 3px;
+  font-size: 12px !important;
+}
+
+/* ── HERO ── */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 140px 48px 80px;
+  position: relative;
+  overflow: hidden;
+}
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 60% 50% at 80% 30%, rgba(45,74,62,0.45) 0%, transparent 70%),
+    radial-gradient(ellipse 40% 60% at 10% 80%, rgba(196,98,45,0.12) 0%, transparent 60%),
+    radial-gradient(ellipse 50% 40% at 50% 50%, rgba(201,151,58,0.06) 0%, transparent 60%);
+}
+.hero-grain {
+  position: absolute;
+  inset: 0;
+  opacity: 0.03;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+  background-size: 200px;
+}
+.hero-tag {
+  font-family: 'DM Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 24px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.hero-tag::before {
+  content: '';
+  display: inline-block;
+  width: 32px;
+  height: 1px;
+  background: var(--gold);
+}
+.hero-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(56px, 8vw, 104px);
+  font-weight: 700;
+  line-height: 0.95;
+  letter-spacing: -0.02em;
+  color: var(--cream);
+  margin-bottom: 28px;
+  max-width: 800px;
+}
+.hero-title em {
+  font-style: italic;
+  color: var(--gold);
+  display: block;
+}
+.hero-sub {
+  font-size: 17px;
+  font-weight: 400;
+  color: rgba(250,247,242,0.6);
+  line-height: 1.7;
+  max-width: 480px;
+  margin-bottom: 44px;
+}
+.hero-actions {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+}
+.btn-primary {
+  display: inline-block;
+  background: var(--terracotta);
+  color: var(--cream);
+  font-family: 'Syne', sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 16px 36px;
+  border-radius: 3px;
+  text-decoration: none;
+  transition: background 0.2s, transform 0.15s;
+}
+.btn-primary:hover { background: var(--terracotta-light); transform: translateY(-1px); }
+.btn-ghost {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: rgba(250,247,242,0.55);
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.btn-ghost:hover { color: var(--cream); }
+.hero-scroll {
+  position: absolute;
+  bottom: 40px;
+  left: 48px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-family: 'DM Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 0.16em;
+  color: rgba(250,247,242,0.3);
+  text-transform: uppercase;
+}
+.hero-scroll::before {
+  content: '';
+  width: 1px;
+  height: 48px;
+  background: rgba(250,247,242,0.2);
+  animation: scrollLine 2s ease-in-out infinite;
+}
+@keyframes scrollLine {
+  0%,100%{height:24px;opacity:0.3}
+  50%{height:48px;opacity:0.7}
+}
+
+/* ── MARQUEE ── */
+.marquee-wrap {
+  background: var(--terracotta);
+  padding: 14px 0;
+  overflow: hidden;
+  white-space: nowrap;
+}
+.marquee-inner {
+  display: inline-flex;
+  animation: marquee 20s linear infinite;
+}
+.marquee-item {
+  font-family: 'DM Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--cream);
+  padding: 0 36px;
+  opacity: 0.9;
+}
+.marquee-dot {
+  color: rgba(250,247,242,0.4);
+  padding: 0 4px;
+}
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+/* ── SECTION BASE ── */
+section { padding: 100px 48px; }
+.section-label {
+  font-family: 'DM Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--terracotta);
+  margin-bottom: 16px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.section-label::before {
+  content: '';
+  width: 24px; height: 1px;
+  background: var(--terracotta);
+}
+.section-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(38px, 5vw, 60px);
+  font-weight: 700;
+  line-height: 1.05;
+  letter-spacing: -0.01em;
+  color: var(--cream);
+  margin-bottom: 20px;
+}
+.section-title em { color: var(--gold); font-style: italic; }
+
+/* ── INTRO ── */
+.intro-section {
+  background: var(--forest-deep);
+  border-top: 1px solid rgba(122,158,142,0.1);
+}
+.intro-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+.intro-body {
+  font-size: 16px;
+  line-height: 1.8;
+  color: rgba(250,247,242,0.65);
+  font-weight: 400;
+  margin-bottom: 20px;
+}
+.intro-body strong { color: var(--cream); font-weight: 600; }
+.intro-stats {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.stat-row {
+  display: flex;
+  align-items: baseline;
+  gap: 16px;
+  padding: 24px 0;
+  border-bottom: 1px solid rgba(122,158,142,0.1);
+}
+.stat-row:first-child { border-top: 1px solid rgba(122,158,142,0.1); }
+.stat-num {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 52px;
+  font-weight: 700;
+  color: var(--gold);
+  line-height: 1;
+  min-width: 100px;
+}
+.stat-text {
+  font-size: 14px;
+  color: rgba(250,247,242,0.55);
+  line-height: 1.5;
+  font-weight: 400;
+}
+.stat-text strong { color: var(--cream); display: block; font-size: 16px; margin-bottom: 4px; }
+
+/* ── PRODUCTS ── */
+.products-section {
+  background: var(--charcoal);
+}
+.products-header {
+  max-width: 600px;
+  margin-bottom: 64px;
+}
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 24px;
+  max-width: 1100px;
+}
+.product-card {
+  background: var(--forest-deep);
+  border: 1px solid rgba(122,158,142,0.12);
+  border-radius: 4px;
+  overflow: hidden;
+  transition: transform 0.25s, border-color 0.25s;
+  text-decoration: none;
+  display: block;
+}
+.product-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(201,151,58,0.3);
+}
+.product-card-top {
+  height: 200px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+.product-card-bg {
+  position: absolute;
+  inset: 0;
+}
+.product-card-badge {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  font-family: 'DM Mono', monospace;
+  font-size: 9px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  padding: 5px 10px;
+  border-radius: 2px;
+}
+.badge-live { background: var(--terracotta); color: var(--cream); }
+.badge-soon { background: rgba(201,151,58,0.15); color: var(--gold); border: 1px solid rgba(201,151,58,0.3); }
+.product-card-icon {
+  font-size: 48px;
+  position: relative;
+  z-index: 1;
+}
+.product-card-body {
+  padding: 28px;
+}
+.product-card-cat {
+  font-family: 'DM Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--sage);
+  margin-bottom: 10px;
+}
+.product-card-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 26px;
+  font-weight: 700;
+  color: var(--cream);
+  line-height: 1.2;
+  margin-bottom: 12px;
+}
+.product-card-desc {
+  font-size: 13px;
+  color: rgba(250,247,242,0.5);
+  line-height: 1.65;
+  font-weight: 400;
+  margin-bottom: 20px;
+}
+.product-card-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 20px;
+  border-top: 1px solid rgba(122,158,142,0.1);
+}
+.product-price {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--gold);
+}
+.product-cta {
+  font-family: 'Syne', sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--terracotta);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.product-cta-soon { color: rgba(250,247,242,0.3); }
+
+/* ── PROMISE ── */
+.promise-section {
+  background: var(--forest);
+  position: relative;
+  overflow: hidden;
+}
+.promise-section::before {
+  content: '';
+  position: absolute;
+  top: -100px; right: -100px;
+  width: 400px; height: 400px;
+  border-radius: 50%;
+  background: rgba(201,151,58,0.06);
+  pointer-events: none;
+}
+.promise-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 48px;
+  max-width: 1000px;
+  margin: 60px auto 0;
+}
+.promise-item {}
+.promise-num {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 64px;
+  font-weight: 700;
+  color: rgba(201,151,58,0.2);
+  line-height: 1;
+  margin-bottom: 12px;
+}
+.promise-title {
+  font-family: 'Syne', sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--cream);
+  margin-bottom: 10px;
+  letter-spacing: 0.02em;
+}
+.promise-text {
+  font-size: 14px;
+  color: rgba(250,247,242,0.55);
+  line-height: 1.7;
+  font-weight: 400;
+}
+
+/* ── FOOTER ── */
+footer {
+  background: var(--forest-deep);
+  padding: 48px;
+  border-top: 1px solid rgba(122,158,142,0.1);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.footer-logo {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--cream);
+}
+.footer-logo span { color: var(--gold); font-style: italic; }
+.footer-copy {
+  font-family: 'DM Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  color: rgba(250,247,242,0.25);
+  text-transform: uppercase;
+}
+.footer-links {
+  display: flex;
+  gap: 24px;
+}
+.footer-links a {
+  font-family: 'DM Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  color: rgba(250,247,242,0.35);
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: color 0.2s;
+}
+.footer-links a:hover { color: var(--cream); }
+
+/* animations */
+.fade-up {
+  opacity: 0;
+  transform: translateY(24px);
+  animation: fadeUp 0.7s ease forwards;
+}
+@keyframes fadeUp {
+  to { opacity: 1; transform: translateY(0); }
+}
+.delay-1 { animation-delay: 0.1s; }
+.delay-2 { animation-delay: 0.2s; }
+.delay-3 { animation-delay: 0.35s; }
+.delay-4 { animation-delay: 0.5s; }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">Glow Up <span>With Grace</span></div>
+  <div class="nav-links">
+    <a href="#guides">Guides</a>
+    <a href="#about">About</a>
+    <a href="meal-prep-sales.html" class="nav-cta">Shop Now</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-grain"></div>
+  <div class="hero-tag fade-up">Your transformation starts here</div>
+  <h1 class="hero-title fade-up delay-1">
+    Become the
+    <em>best version</em>
+    of yourself.
+  </h1>
+  <p class="hero-sub fade-up delay-2">Step-by-step digital guides for eating better, looking better, and feeling better — without the overwhelm.</p>
+  <div class="hero-actions fade-up delay-3">
+    <a href="meal-prep-sales.html" class="btn-primary">Browse Guides</a>
+    <a href="#guides" class="btn-ghost">See what's inside →</a>
+  </div>
+  <div class="hero-scroll">Scroll</div>
+</section>
+
+<!-- MARQUEE -->
+<div class="marquee-wrap">
+  <div class="marquee-inner">
+    <span class="marquee-item">Meal Prep</span><span class="marquee-dot">·</span>
+    <span class="marquee-item">Glow Up</span><span class="marquee-dot">·</span>
+    <span class="marquee-item">Fat Loss</span><span class="marquee-dot">·</span>
+    <span class="marquee-item">Skin Health</span><span class="marquee-dot">·</span>
+    <span class="marquee-item">Morning Routines</span><span class="marquee-dot">·</span>
+    <span class="marquee-item">Gut Health</span><span class="marquee-dot">·</span>
+    <span class="marquee-item">Body Recomp</span><span class="marquee-dot">·</span>
+    <span class="marquee-item">Healthy Habits</span><span class="marquee-dot">·</span>
+    <span class="marquee-item">Meal Prep</span><span class="marquee-dot">·</span>
+    <span class="marquee-item">Glow Up</span><span class="marquee-dot">·</span>
+    <span class="marquee-item">Fat Loss</span><span class="marquee-dot">·</span>
+    <span class="marquee-item">Skin Health</span><span class="marquee-dot">·</span>
+    <span class="marquee-item">Morning Routines</span><span class="marquee-dot">·</span>
+    <span class="marquee-item">Gut Health</span><span class="marquee-dot">·</span>
+    <span class="marquee-item">Body Recomp</span><span class="marquee-dot">·</span>
+    <span class="marquee-item">Healthy Habits</span><span class="marquee-dot">·</span>
+  </div>
+</div>
+
+<!-- INTRO -->
+<section class="intro-section" id="about">
+  <div class="intro-grid">
+    <div>
+      <div class="section-label">Why Glow Up With Grace</div>
+      <h2 class="section-title">Real systems.<br><em>Real results.</em></h2>
+      <p class="intro-body">Most self-improvement content gives you motivation. We give you <strong>systems</strong> — step-by-step guides built specifically for beginners who are tired of trying and starting over.</p>
+      <p class="intro-body">No camera. No influencer persona. Just clear, honest, practical guidance you can start using this week.</p>
+    </div>
+    <div class="intro-stats">
+      <div class="stat-row">
+        <div class="stat-num">60</div>
+        <div class="stat-text"><strong>Minutes a week</strong>is all it takes to transform how you eat with the right system</div>
+      </div>
+      <div class="stat-row">
+        <div class="stat-num">4</div>
+        <div class="stat-text"><strong>Weeks to a habit</strong>that sticks — our guides are built around this timeline</div>
+      </div>
+      <div class="stat-row">
+        <div class="stat-num">$9</div>
+        <div class="stat-text"><strong>Starting price</strong>— less than one takeout meal for a system that replaces dozens</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRODUCTS -->
+<section class="products-section" id="guides">
+  <div class="products-header">
+    <div class="section-label">Digital Guides</div>
+    <h2 class="section-title">Pick your<br><em>transformation.</em></h2>
+  </div>
+  <div class="products-grid">
+
+    <!-- Product 1 — LIVE -->
+    <a href="meal-prep-sales.html" class="product-card">
+      <div class="product-card-top">
+        <div class="product-card-bg" style="background: linear-gradient(135deg, #2D4A3E 0%, #1a2e26 100%);"></div>
+        <div class="product-card-badge badge-live">Available Now</div>
+        <div class="product-card-icon">🥗</div>
+      </div>
+      <div class="product-card-body">
+        <div class="product-card-cat">Nutrition · Meal Prep</div>
+        <div class="product-card-title">The Beginner's Meal Prep Blueprint</div>
+        <div class="product-card-desc">Your first 4 weeks, step by step. Go from zero to prepping 5 days of healthy meals in under 60 minutes every Sunday.</div>
+        <div class="product-card-footer">
+          <div class="product-price">$9.99</div>
+          <div class="product-cta">Get the guide →</div>
+        </div>
+      </div>
+    </a>
+
+    <!-- Product 2 — Coming Soon -->
+    <div class="product-card" style="cursor:default;">
+      <div class="product-card-top">
+        <div class="product-card-bg" style="background: linear-gradient(135deg, #3a2a1e 0%, #1e1810 100%);"></div>
+        <div class="product-card-badge badge-soon">Coming Soon</div>
+        <div class="product-card-icon">✨</div>
+      </div>
+      <div class="product-card-body">
+        <div class="product-card-cat">Transformation · Lifestyle</div>
+        <div class="product-card-title">The 30-Day Glow Up Guide</div>
+        <div class="product-card-desc">A full-body, full-life 30-day system covering skin, habits, movement, and mindset. Your complete beginner transformation plan.</div>
+        <div class="product-card-footer">
+          <div class="product-price" style="color:rgba(250,247,242,0.25);">TBA</div>
+          <div class="product-cta product-cta-soon">Notify me →</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Product 3 — Coming Soon -->
+    <div class="product-card" style="cursor:default;">
+      <div class="product-card-top">
+        <div class="product-card-bg" style="background: linear-gradient(135deg, #2a1e30 0%, #181020 100%);"></div>
+        <div class="product-card-badge badge-soon">Coming Soon</div>
+        <div class="product-card-icon">🔥</div>
+      </div>
+      <div class="product-card-body">
+        <div class="product-card-cat">Fat Loss · Body Recomp</div>
+        <div class="product-card-title">Fat Loss for Beginners: The No-Nonsense System</div>
+        <div class="product-card-desc">Cut through the noise. A simple, honest fat loss guide built for real beginners — no crash diets, no extreme workouts.</div>
+        <div class="product-card-footer">
+          <div class="product-price" style="color:rgba(250,247,242,0.25);">TBA</div>
+          <div class="product-cta product-cta-soon">Notify me →</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- PROMISE -->
+<section class="promise-section">
+  <div style="max-width:1000px;margin:0 auto;">
+    <div class="section-label">Our Promise</div>
+    <h2 class="section-title">Built different,<br><em>on purpose.</em></h2>
+    <div class="promise-grid">
+      <div class="promise-item">
+        <div class="promise-num">01</div>
+        <div class="promise-title">Beginner-first always</div>
+        <div class="promise-text">Every guide starts where you actually are — not where someone assumes you should be. No jargon, no assumed knowledge.</div>
+      </div>
+      <div class="promise-item">
+        <div class="promise-num">02</div>
+        <div class="promise-title">Systems, not motivation</div>
+        <div class="promise-text">Motivation fades. A repeatable system doesn't. Every guide gives you a structure you can follow on autopilot once the habit forms.</div>
+      </div>
+      <div class="promise-item">
+        <div class="promise-num">03</div>
+        <div class="promise-title">Instant, forever yours</div>
+        <div class="promise-text">Download once, own forever. No subscriptions, no apps, no monthly fees. A one-time purchase that works on any device.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">Glow Up <span>With Grace</span></div>
+  <div class="footer-copy">© 2025 Glow Up With Grace · All rights reserved</div>
+  <div class="footer-links">
+    <a href="meal-prep-sales.html">Shop</a>
+    <a href="#">Pinterest</a>
+  </div>
+</footer>
+
+</body>
+</html>
